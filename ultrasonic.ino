@@ -1,3 +1,5 @@
+// test for controlling ultrasonic sensor
+
 const int trigPin = 14;  
 const int echoPin = 15;
 float distance, duration;
@@ -11,7 +13,7 @@ void setup() {
 }  
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // use ultrasonic sensor to see how far an object is from sensor
 	digitalWrite(trigPin, LOW);  
 	delayMicroseconds(2);  
 	digitalWrite(trigPin, HIGH);  

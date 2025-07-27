@@ -1,3 +1,5 @@
+#include <servo.h>
+
 const int writeStepperOnPin = 10;
 
 const int leftTrigPin = 14;

@@ -29,7 +29,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   if (digitalRead(readStepperOnPin) == 1 && stepperPos <= maxStepperPose) {
     stepperOut();
   } 

@@ -1,17 +1,17 @@
+// previous code for keyboard. I changed a few things
+
 #include <Keyboard.h>
-/* this is the code for a keyboard - see the github file for schematics
-it uses the rows as input and columns as output
-as you can see, i set the schematic to do something really weird
-I used Arduino bc Arduino > Micropython
-Sticky Keys are turned on by default. I'm too lazy to change that
-Inspired by Keychron q1 custom keyboard
-It only works theoretically;  sj */
+
+/* This is the code for a keyboard
+Me and Yoda-Flash have compiled this from multiple files,
+including the stepper motor and keyboard library */
 // set amount of rows/columns
 #define ROWS 5
 #define COLUMNS 12
+
 // set column and row pins(bc they're irregular)
-// TODO: Check these pins
 int row_pins[ROWS] = {10, 11, 12, 13, 21};
+
 int column_pins[COLUMNS] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 17, 18, 19};
 // set lower alphabet(type[column][row]) - assuming that shift will automatically be called
 // 0 represents a blank space
@@ -22,25 +22,30 @@ int alphabet[ROWS][COLUMNS] = {
   {129,  'z',  'x',  'c',  'v',  'b',  'n',  'm',   44,  46,   224,   133},
   {0,  96,   92,  216,  215,  178,    0,  218,  217,  91,  93,  0}
 };
+
 // set which row the output is on, whether shift and control and windows is on(0 is false)
 int iteration_count = 0;
 int is_shift = 0;
 int is_ctrl = 0;
 int is_gui = 0;
+
 void setup(){
   // set rows as input
   for (int i = 0; i < ROWS; i++){
     pinMode(row_pins[i], INPUT);
   }
+
   // set columns as output
   for (int i = 0; i < 15; i++){
     pinMode(column_pins[i], OUTPUT);
   }
+
   // turn off all the outputs except column_0
   digitalWrite(column_pins[0], HIGH);
   for (int i = 1; i < 15; i++){
     pinMode(column_pins[i], INPUT);
   }
+
   Keyboard.begin();
 }
 void loop(){
@@ -48,17 +53,15 @@ void loop(){
   for (int i = 0; i < ROWS; i++){
     if (digitalRead(row_pins[i]) == HIGH) {
       Keyboard.write(alphabet[i][iteration_count]);
+
       // check for shift key
-      if ((i == 4 && iteration_count == 0) || (i == 4 && iteration_count == 11)) {
-        is_shift = 1;
-        // check for ctrl key
-      } else if ((i == 5 && iteration_count == 0) || (i == 5 && iteration_count == 10)) {
-        is_ctrl = 1;
-        // check for windows key
-      } else if ((i == 5 && iteration_count == 2) || (i == 5 && iteration_count == 8)) {
-        is_gui = 1;
-        // if something other than aforementioned buttons are pressed then release all buttons
-      } else {
+        if ((i == 4 && iteration_count == 0) || (i == 4 && iteration_count == 11)) is_shift = 1;
+      // check for ctrl key
+        else if ((i == 5 && iteration_count == 0) || (i == 5 && iteration_count == 10)) is_ctrl = 1;
+      // check for windows key
+        else if ((i == 5 && iteration_count == 2) || (i == 5 && iteration_count == 8)) is_gui = 1;
+      // if something other than aforementioned buttons are pressed then release all buttons
+        else {
         Keyboard.releaseAll();
       }
     }
@@ -73,7 +76,7 @@ void loop(){
       iteration_count = 0;
     }
   }
+
   // standard delay for HID keyboard according to ch*tgpt
   delayMicroseconds(8);
-  // don't touch until after tested
 }
