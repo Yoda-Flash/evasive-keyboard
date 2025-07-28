@@ -14,3 +14,7 @@ This hardware allows one to track if a user is about to type or not, which, woul
 https://github.com/user-attachments/assets/7df26c2c-b0d1-429e-a43a-6353fa20b351
 
 ![IMG_0513](https://github.com/user-attachments/assets/1c3bdd1f-1c60-4836-88c7-b3f7ae4b4a09)
+
+## BOM
+<img width="288" height="204" alt="image" src="https://github.com/user-attachments/assets/88082222-c97f-4b92-9cbf-8bb5e848ff2b" />
+
