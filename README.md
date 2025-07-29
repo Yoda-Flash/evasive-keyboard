@@ -18,3 +18,8 @@ https://github.com/user-attachments/assets/7df26c2c-b0d1-429e-a43a-6353fa20b351
 ## BOM
 <img width="288" height="204" alt="image" src="https://github.com/user-attachments/assets/88082222-c97f-4b92-9cbf-8bb5e848ff2b" />
 
+## Wiring diagram 
+For the keyboard: 
+![IMG_0544](https://github.com/user-attachments/assets/2add4ed3-51e1-4cec-bbec-9d80b5904fb0)
+
+
