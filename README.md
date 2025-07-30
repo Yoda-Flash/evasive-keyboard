@@ -21,5 +21,8 @@ https://github.com/user-attachments/assets/7df26c2c-b0d1-429e-a43a-6353fa20b351
 ## Wiring diagram 
 For the keyboard: 
 ![IMG_0544](https://github.com/user-attachments/assets/2add4ed3-51e1-4cec-bbec-9d80b5904fb0)
+For the ultrasonic:
+<img width="2262" height="1080" alt="image" src="https://github.com/user-attachments/assets/95eaab50-f652-48cc-97ae-f629a7e2587a" />
+
 
 
