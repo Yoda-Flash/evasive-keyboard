@@ -23,6 +23,7 @@ For the keyboard:
 ![IMG_0544](https://github.com/user-attachments/assets/2add4ed3-51e1-4cec-bbec-9d80b5904fb0)
 For the ultrasonic:
 <img width="2262" height="1080" alt="image" src="https://github.com/user-attachments/assets/95eaab50-f652-48cc-97ae-f629a7e2587a" />
-
+Combined:
+<img width="1190" height="372" alt="image" src="https://github.com/user-attachments/assets/31dc7e11-0eca-4c90-aa4c-62671c9c449c" />
 
 
